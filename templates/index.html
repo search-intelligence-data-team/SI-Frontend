@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/svol.css') }}">
+<script src="{{ url_for('static', filename='js/svol.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div id="svolHead">
+    <h1>Search Volume Tool</h1>
+</div>
+
+<div id="svolBody">
+
+    <div id="optionsPanel">
+        <label for="locationsDropdown">Location</label>
+        <select id="locationsDropdown" name="Locations">
+            <option value="us_nat">US National</option>
+            <option value="us_states">US States</option>
+            <option value="uk_nat">UK National</option>
+        </select>
+        <label for="startDatePicker">Start Date</label>
+        <input type="date" id="startDatePicker" class="datePicker">
+        <label for="endDatePicker">End Date</label>
+        <input type="date" id="endDatePicker" class="datePicker">
+        <label for="templatesInput">Templates</label>
+        <textarea id="templatesInput"></textarea>
+    </div>
+
+    <template id="termsUnitTemplate">
+        <div class="termsUnit">
+            <div class="termsHeader">
+                <p class="termsName">term_1</p>
+                <button>delete</button>
+            </div>
+            <textarea class="termsList"></textarea>
+        </div>
+    </template>
+
+    <div class="termsUnit">
+        <div class="termsHeader">
+            <p class="termsName">term_1</p>
+            <button>delete</button>
+        </div>
+        <textarea class="termsList"></textarea>
+    </div>
+    <button>+</button>
+</div>
+<button>Generate config</button>
+
+{% endblock %}
